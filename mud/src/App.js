@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Route, Redirect } from 'react-router-dom';
 import Login from './components/Login';
 import Register from './components/Register';
 
