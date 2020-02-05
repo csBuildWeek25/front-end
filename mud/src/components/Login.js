@@ -16,6 +16,11 @@ const Login = props => {
                 localStorage.setItem('token', res.data.payload);
             })
     }
+    
+    const redirectToRegister = event => {
+        event.preventDefault();
+        props.history.push('/register')
+    }
 
     return (
         <>
@@ -34,6 +39,7 @@ const Login = props => {
                     onChange={handleChange}
                 />
                 <button onClick={handleSubmit}>Submit</button>
+                <button onClick={redirectToRegister}>Register</button>
             </form>
         </>
     )
