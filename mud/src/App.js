@@ -7,12 +7,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Map />
         Welcome to The Adventure game
       </header>
-      <div>
-        <Room />
-      </div>
+      <Map />
     </div>
   );
 }
