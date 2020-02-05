@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import axiosWithAuth from '../utils/axiosWithAuth.js'
 
-const Login = props => {
+const Register = props => {
     const [creds, setCreds] = useState({username: '', password: ''});
 
     const handleChange = event => {
@@ -11,7 +10,7 @@ const Login = props => {
     const handleSubmit = event => {
         event.preventDefault();
         console.log(creds);
-        axiosWithAuth.post('/login', creds)
+        axiosWithAuth.post('/register', creds)
             .then(res => {
                 localStorage.setItem('token', res.data.payload);
             })
@@ -19,7 +18,7 @@ const Login = props => {
 
     return (
         <>
-            <h2>Login</h2>
+            <h2>Register</h2>
             <form className="form" onSubmit={handleSubmit}>
                 <input
                     type="text"
@@ -28,7 +27,7 @@ const Login = props => {
                     onChange={handleChange}
                 />
                 <input
-                    type="text"
+                    type="password"
                     name="password"
                     value={creds.password}
                     onChange={handleChange}
@@ -39,4 +38,4 @@ const Login = props => {
     )
 }
 
-export default Login;
+export default Register;
