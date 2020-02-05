@@ -6,7 +6,11 @@ const Map = () => {
 	const [map, setmap] = useState([]);
 
 	useEffect(() => {
-		client.get("/api/move/");
+		async function fetchMapLayout() {
+			const getDirections = client.get("/api/adv/move");
+			setmap(getDirections);
+		}
+		fetchMapLayout();
 	}, []);
 	return (
 		<div className="map">
