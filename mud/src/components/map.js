@@ -8,6 +8,7 @@ import { MapContext } from '../contexts/MapContext';
 
 const Map = () => {
 	const { map, setMap } = useContext(MapContext);
+	console.log(map)
 
 //   useEffect(() => {
 //     async function fetchMapLayout() {

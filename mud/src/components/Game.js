@@ -28,7 +28,7 @@ const Game = () => {
 
 	return (
 		<div className="game">
-			<Map map={map}/>
+			<Map />
 			<Movement />
 		</div>
 	)
