@@ -5,3 +5,9 @@
 	height:100vh;
 }
 
+.App-header {
+	text-align: center;
+	font-size: 50px;
+	font-weight: 500;
+	color: white;
+}

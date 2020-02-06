@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        Welcome to The Adventure game
+        Welcome To The Adventure Game
       </header>
       <Map />
     </div>

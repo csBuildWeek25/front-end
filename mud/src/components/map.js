@@ -33,6 +33,51 @@ const Map = () => {
 			<Room key={room.id} room={room} />
 		))}
       </div>
+      <div className="content">
+        {map.map(room => (
+			<Room key={room.id} room={room} />
+		))}
+      </div>
+      <div className="content">
+        {map.map(room => (
+			<Room key={room.id} room={room} />
+		))}
+      </div>
+      <div className="content">
+        {map.map(room => (
+			<Room key={room.id} room={room} />
+		))}
+      </div>
+      <div className="content">
+        {map.map(room => (
+			<Room key={room.id} room={room} />
+		))}
+      </div>
+      <div className="content">
+        {map.map(room => (
+			<Room key={room.id} room={room} />
+		))}
+      </div>
+      <div className="content">
+        {map.map(room => (
+			<Room key={room.id} room={room} />
+		))}
+      </div>
+      <div className="content">
+        {map.map(room => (
+			<Room key={room.id} room={room} />
+		))}
+      </div>
+      <div className="content">
+        {map.map(room => (
+			<Room key={room.id} room={room} />
+		))}
+      </div>
+      <div className="content">
+        {map.map(room => (
+			<Room key={room.id} room={room} />
+		))}
+      </div>
     </div>
   );
 };
