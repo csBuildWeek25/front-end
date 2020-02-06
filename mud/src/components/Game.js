@@ -3,6 +3,7 @@ import axios from 'axios';
 
 // Components
 import Movement from './Movement';
+import Navigation from './nav/Navigation';
 import Map from './map';
 
 import { MapContext } from '../contexts/MapContext';
@@ -13,10 +14,10 @@ const Game = () => {
 
 	useEffect(() => {
 		axios
-			.get("https://swapi.co/api/starships")
+			.get("https://cs25mudbuildweek.herokuapp.com/api/adv/map")
 			.then(res => {
-				console.log(res.data.results);
-				const rooms = res.data.results;
+				console.log(res.data.map);
+				const rooms = res.data.map;
 				setMap(rooms);
 			})
 			.catch(err => console.log(err));
@@ -28,6 +29,7 @@ const Game = () => {
 
 	return (
 		<div className="game">
+			<Navigation />
 			<Map />
 			<Movement />
 		</div>
