@@ -6,8 +6,7 @@ import "./map.scss";
 import { Room } from "./Room";
 import Axios from "axios";
 
-const Map = () => {
-  const [map, setMap] = useState([]);
+const Map = ({ map }) => {
 
 //   useEffect(() => {
 //     async function fetchMapLayout() {
@@ -18,14 +17,7 @@ const Map = () => {
 
 //   }, []);
 
-  useEffect(() => {
-	  axios.get('https://swapi.co/api/starships')
-	  .then(res => {
-		  console.log(res.data.results)
-		  const rooms = res.data.results
-		  setMap(rooms)
-	  })
-  }, [])
+  
   return (
     <div className="map">
       <div className="content">
