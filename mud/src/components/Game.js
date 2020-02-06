@@ -1,29 +1,33 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 
 // Components
 import Movement from './Movement';
 import Map from './map';
 
-const Game = props => {
+import { MapContext } from '../contexts/MapContext';
+
+const Game = () => {
 	const [currentRoomId, setCurrentRoomId] = useState()
-	onst [map, setMap] = useState([]);
+	const { map, setMap } = useContext(MapContext)
 
 	useEffect(() => {
-		axios.get('https://swapi.co/api/starships')
-		.then(res => {
-			console.log(res.data.results)
-			const rooms = res.data.results
-			setMap(rooms)
-		})
-	}, [])
+		axios
+			.get("https://swapi.co/api/starships")
+			.then(res => {
+				console.log(res.data.results);
+				const rooms = res.data.results;
+				setMap(rooms);
+			})
+			.catch(err => console.log(err));
+	}, []);
 
-	const move = direction => {
-		return 
-	}
+	// const move = direction => {
+	// 	return 
+	// }
 
 	return (
-		<div>
+		<div className="game">
 			<Map map={map}/>
 			<Movement />
 		</div>

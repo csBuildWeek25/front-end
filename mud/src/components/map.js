@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
-import axios from 'axios';
+import React, { useState, useEffect, useContext } from "react";
 import { client } from "../utils/api";
 import "./map.scss";
 
 import { Room } from "./Room";
-import Axios from "axios";
 
-const Map = ({ map }) => {
+import { MapContext } from '../contexts/MapContext';
+
+const Map = () => {
+	const { map, setMap } = useContext(MapContext);
 
 //   useEffect(() => {
 //     async function fetchMapLayout() {
