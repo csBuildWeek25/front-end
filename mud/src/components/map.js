@@ -4,76 +4,30 @@ import "./map.scss";
 
 import { Room } from "./Room";
 
-import { MapContext } from '../contexts/MapContext';
+import { MapContext } from "../contexts/MapContext";
 
 const Map = () => {
 	const { map, setMap } = useContext(MapContext);
-	console.log(map)
+	console.log(map);
 
-//   useEffect(() => {
-//     async function fetchMapLayout() {
-//       const getDirections = client.get("/api/adv/move");
-//       setmap(getDirections);
-//     }
-// 	fetchMapLayout();
+	//   useEffect(() => {
+	//     async function fetchMapLayout() {
+	//       const getDirections = client.get("/api/adv/move");
+	//       setmap(getDirections);
+	//     }
+	// 	fetchMapLayout();
 
-//   }, []);
+	//   }, []);
 
-  
-  return (
-    <div className="map">
-      <div className="content">
-        {map.map(room => (
-			<Room key={room.id} room={room} />
-		))}
-      </div>
-      <div className="content">
-        {map.map(room => (
-			<Room key={room.id} room={room} />
-		))}
-      </div>
-      <div className="content">
-        {map.map(room => (
-			<Room key={room.id} room={room} />
-		))}
-      </div>
-      <div className="content">
-        {map.map(room => (
-			<Room key={room.id} room={room} />
-		))}
-      </div>
-      <div className="content">
-        {map.map(room => (
-			<Room key={room.id} room={room} />
-		))}
-      </div>
-      <div className="content">
-        {map.map(room => (
-			<Room key={room.id} room={room} />
-		))}
-      </div>
-      <div className="content">
-        {map.map(room => (
-			<Room key={room.id} room={room} />
-		))}
-      </div>
-      <div className="content">
-        {map.map(room => (
-			<Room key={room.id} room={room} />
-		))}
-      </div>
-      <div className="content">
-        {map.map(room => (
-			<Room key={room.id} room={room} />
-		))}
-      </div>
-      <div className="content">
-        {map.map(room => (
-			<Room key={room.id} room={room} />
-		))}
-      </div>
-    </div>
-  );
+	return (
+		<div className="map">
+			<div className="content">
+				{map.map(room => (
+					<Room key={room.id} room={room} />
+				))}
+			</div>
+		</div>
+	);
 };
 
 export default Map;
