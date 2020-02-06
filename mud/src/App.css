@@ -1,4 +1,5 @@
 .App {
+<<<<<<< HEAD
 	background-image: url("C:/Users/pmtag/Documents/front-end/mud/src/images/mossy_waterfall_bg.jpg");
 
 	width: 100vw;
@@ -10,4 +11,15 @@
 	font-size: 50px;
 	font-weight: 500;
 	color: white;
+=======
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  width: 200px;
+>>>>>>> 8c10541262425cab725565fb9b878077bd1ed2cf
 }
