@@ -7,14 +7,14 @@ const Map = () => {
 
 	useEffect(() => {
 		async function fetchMapLayout() {
-			const getDirections = client.get("/api/adv/move");
+			const getDirections = client.get("/api/adv/init");
 			setmap(getDirections);
 		}
 		fetchMapLayout();
 	}, []);
 	return (
 		<div className="map">
-			<div className="content">display</div>
+			<div className="content"></div>
 		</div>
 	);
 };
