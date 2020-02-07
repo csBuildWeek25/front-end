@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 // import { client } from "../utils/api";
-import "./map.scss";
 import axios from "axios";
+import { Card, Button } from "semantic-ui-react";
 
+import "./map.scss";
 const Map = () => {
 	const [map, setmap] = useState([]);
 
@@ -16,17 +17,25 @@ const Map = () => {
 		}
 		fetchMapLayout();
 	}, []);
+	console.log(map);
 	return (
 		<div className="map">
 			<div className="content">
 				<div>
 					<Card.Group>
-						{map.data &&
+						{/* {map.data &&
 							map.data.map(data => (
 								<div key={data.id}>
-									<Card></Card>
+									<Card.Header>{data.title}</Card.Header>
+									<Card.Description>
+										{data.description}
+									</Card.Description>
+									<Button>North</Button>
+									<Button>South</Button>
+									<Button>East</Button>
+									<Button>West</Button>
 								</div>
-							))}
+							))} */}
 					</Card.Group>
 				</div>
 			</div>
