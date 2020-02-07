@@ -1,14 +1,32 @@
-import React from "react";
 import Map from "./components/map";
+
+import React from "react";
 import "./App.css";
+import { Route, Redirect } from "react-router-dom";
+import Login from "./components/Login";
+import Register from "./components/Register";
+
+const ProtectedRoute = ({ component: Component, ...rest }) => {
+	return (
+		<Route
+			{...rest}
+			render={props =>
+				localStorage.getItem("token") ? (
+					<Component {...props} />
+				) : (
+					<Redirect to="/login" />
+				)
+			}
+		/>
+	);
+};
 
 function App() {
 	return (
 		<div className="App">
-			<header className="App-header">
-				<Map />
-				Welcome to The Adventure game
-			</header>
+			<Map />
+			<Route path="/login" component={Login} />
+			<ProtectedRoute path="/register" component={Register} />
 		</div>
 	);
 }
