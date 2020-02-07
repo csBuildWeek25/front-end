@@ -1,10 +1,9 @@
-import Map from "./components/map";
-
 import React from "react";
 import "./App.css";
 import { Route, Redirect } from "react-router-dom";
-import Login from "./components/Login";
 import Register from "./components/Register";
+import Login from "./components/Login";
+import Map from "./components/map";
 
 const ProtectedRoute = ({ component: Component, ...rest }) => {
 	return (
@@ -24,9 +23,9 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
 function App() {
 	return (
 		<div className="App">
-			<Map />
 			<Route path="/login" component={Login} />
 			<ProtectedRoute path="/register" component={Register} />
+			<Route path="/game" component={Map} />
 		</div>
 	);
 }
