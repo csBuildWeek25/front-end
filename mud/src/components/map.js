@@ -95,7 +95,16 @@ const Map = () => {
 					West
 				</Button>
 			</div>
-			<div className="current"></div>
+			<div className="current">
+				{currentRoom.data &&
+					currentRoom.data.map(data => (
+						<div key={data.id}>
+							You made it {data.name}, welcome to {data.title}.
+							Where {data.description}. Lets Keep Going Where
+							next?
+						</div>
+					))}
+			</div>
 		</div>
 	);
 };
