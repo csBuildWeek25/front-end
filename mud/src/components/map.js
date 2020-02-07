@@ -6,16 +6,53 @@ import { Card, Button } from "semantic-ui-react";
 import "./map.scss";
 const Map = () => {
 	const [map, setmap] = useState([]);
+	const [currentRoom, setcurrentRoom] = useState([]);
 
 	useEffect(() => {
 		async function fetchMapLayout() {
-			console.log("this here");
 			const getMap = await axios.get("http://localhost:8000/api/adv/map");
 			setmap({ getMap });
 		}
 		fetchMapLayout();
 	}, []);
-	console.log(map.getMap);
+
+	async function goNorth() {
+		const nextRoom = await axios.post(
+			"http://localhost:8000/api/adv/move",
+			{
+				direction: "n",
+			}
+		);
+		setcurrentRoom(nextRoom);
+	}
+	async function goSouth() {
+		const nextRoom = await axios.post(
+			"http://localhost:8000/api/adv/move",
+			{
+				direction: "s",
+			}
+		);
+		setcurrentRoom(nextRoom);
+	}
+	async function goEast() {
+		const nextRoom = await axios.post(
+			"http://localhost:8000/api/adv/move",
+			{
+				direction: "e",
+			}
+		);
+		setcurrentRoom(nextRoom);
+	}
+	async function goWest() {
+		const nextRoom = await axios.post(
+			"http://localhost:8000/api/adv/move",
+			{
+				direction: "w",
+			}
+		);
+		setcurrentRoom(nextRoom);
+	}
+
 	return (
 		<div className="game">
 			<div className="map">
@@ -45,11 +82,20 @@ const Map = () => {
 				</div>
 			</div>
 			<div className="buttons">
-				<Button className="btn">North</Button>
-				<Button className="btn">South</Button>
-				<Button className="btn">East</Button>
-				<Button className="btn">West</Button>
+				<Button className="btn" onClick={goNorth}>
+					North
+				</Button>
+				<Button className="btn" onClick={goSouth}>
+					South
+				</Button>
+				<Button className="btn" onClick={goEast}>
+					East
+				</Button>
+				<Button className="btn" onClick={goWest}>
+					West
+				</Button>
 			</div>
+			<div className="current"></div>
 		</div>
 	);
 };
